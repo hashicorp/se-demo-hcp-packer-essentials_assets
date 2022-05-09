@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+
+        <div class="explainer-wrapper">
+
+            <div class="explainer" style="--splash-delay: 1">
+                <h1>HCP Packer Essentials</h1>
+                <p>This demonstration explores the core benefits of HCP Packer.
+                    Please follow the HCP Packer Essentials documentation to
+                    familiarize yourself with the challanges, the narrative and
+                    the steps to showcase during this session.</p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 3">
+                <p>There are three self-contained scenarios in this demonstration.
+                    We aim to maintain a minimalist design principle so that each
+                    scenario can be flexible and adaptable with your own perspective.</p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 6">
+                <p>It is possible that a business problem may require more than one
+                    solution and the entire narrative may include multiple scenarios.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('challenges') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

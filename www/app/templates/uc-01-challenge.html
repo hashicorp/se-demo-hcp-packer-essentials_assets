@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <div class="explainer-wrapper">
+
+            <h1>Reducing risk by enforcing standards</h1>
+            <table class="styled-table">
+                <tr>
+                    <th>Challenges</th>
+                    <th>Consequences</th>
+                </tr>
+                <tr>
+                    <td><strong>Inconsistency</strong>:
+                        Different teams have different opinions on technology practices.
+                    </td>
+                    <td>When teams have different practices, they are prone to achieve
+                        different outcomes that require multiple resolutions before a
+                        full production release.</td>
+                </tr>
+                <tr>
+                    <td><strong>Risks</strong>:
+                        Multiple teams can have different procedures for user access,
+                        network communications and baseline packages.</td>
+                    <td>Technical risks immediately compromise operational practices and
+                        elevate quickly to inconsistent application of security standards.</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('uc_01_description') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

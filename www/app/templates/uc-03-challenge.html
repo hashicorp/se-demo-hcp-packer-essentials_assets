@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <div class="explainer-wrapper">
+
+            <h1>Maintaining auditability with an image registry</h1>
+            <table class="styled-table">
+                <tr>
+                    <th>Challenges</th>
+                    <th>Consequences</th>
+                </tr>
+                <tr>
+                    <td><strong>Image sprawl</strong>: Image diversity across multiple platforms leads to an extensive
+                        collection of
+                        assets.
+                    </td>
+                    <td>Teams that do not track their image assets centrally contribute to inconsistency, higher costs
+                        and security exposures.</td>
+                </tr>
+                <tr>
+                    <td><strong>Unmanaged lifecycle</strong>: Teams that create images need to manage the lifecycle of
+                        images in legacy,
+                        active and dormant stages.
+                    </td>
+                    <td>When a team does not follow given standards, technical, security, and governance guidelines
+                        place an organization in vulnerable situations.</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('uc_03_description') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

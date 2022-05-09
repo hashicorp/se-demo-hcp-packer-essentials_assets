@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<style>
+</style>
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <div class="slide-content">
+
+            <div class="explainer-wrapper">
+                <h1>Terraform Cloud and HCP Packer</h1>
+                <p>Make a commit to the <strong>production</strong> repository with Terraform
+                    code that uses an Amazon Machine Image (AMI) reference and build a new
+                    Amazon EC2 resource.</p>
+                <br>
+                <img src="{{ url_for('static', filename='img/uc-02-workflow.svg') }}" alt="Vault">
+                <span class="tooltiptext" id="tooltiptext">Automated workflow</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('uc_02_description') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
+
+{% block next_page %}
+<a href="{{ url_for('uc_02_summary') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

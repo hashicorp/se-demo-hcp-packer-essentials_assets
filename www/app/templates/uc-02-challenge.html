@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <div class="explainer-wrapper">
+
+            <h1>Use images in automated provisioning workflows</h1>
+            <table class="styled-table">
+                <tr>
+                    <th>Challenges</th>
+                    <th>Consequences</th>
+                </tr>
+                <tr>
+                    <td><strong>Platform diversity</strong>:
+                        Provisioning workflows can vary depending on the target Cloud platforms,
+                        VMware or Kubernetes environments.
+                    </td>
+                    <td>Different workflow processes across multiple target environments introduce significant overhead
+                        for development, release and maintenance.</td>
+                </tr>
+                <tr>
+                    <td><strong>Asset sprawl</strong>:
+                        Image diversity across multiple platforms requires control to prevent loss and
+                        unintended exposure.</td>
+                    <td>Multiple teams need to manually maintain a ledger of assets in the development, release, and
+                        maintenance stages. There is little control over assets' lifecycle, leading to forgetfulness,
+                        misplacement, and abandonment.</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('uc_02_description') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

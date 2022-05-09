@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<style>
+    .main-content {
+        width: var(--instruqt-view-width);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .explainer-icon {
+        width: 128px;
+        height: 128px;
+    }
+
+    .explainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+
+        <div class="explainer-wrapper">
+
+            <div class=" explainer" style="--splash-delay: 1; width: 300px;">
+
+                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-config.svg') }}"
+                    alt="Packer configuration">
+
+                <h3>Scenario 1: Reducing risk by enforcing standards</h3>
+                <p>A golden image approach helps enforce operational guidelines and
+                    reduces risk by avoiding opinionated configuration options.</p>
+            </div>
+        </div>
+        <div class="explainer-wrapper">
+
+
+            <div class="explainer" style="--splash-delay: 3; width: 300px;">
+
+                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-workflow.svg') }}"
+                    alt="Image workflow">
+
+                <h3>Scenario 2: Using golden images in automated provisioning workflows</h3>
+                <p>Machine images integrate easily onto a larger workflow framework
+                    to complement automated delivery pipelines.</p>
+            </div>
+        </div>
+        <div class="explainer-wrapper">
+
+            <div class="explainer" style="--splash-delay: 6; width: 300px;">
+
+                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-process.svg') }}"
+                    alt="Provisioning process">
+
+                <h3>Scenario 3: Maintaining auditability of assets with a central image registry</h3>
+                <p>Consolidating machine image assets in a centralized registry
+                    appeals to security-conscious organizations.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('about') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('setup_hcp') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

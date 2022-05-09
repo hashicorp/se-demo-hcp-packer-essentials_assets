@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/forms.css') }}">
+
+<script type="module" src="{{ url_for('static', filename='js/tfc_form_handler.js') }}"></script>
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-forms">
+
+        <div class="explainer-wrapper" data-clickable="true">
+            <div class="explainer" style="--splash-delay: 1;">
+                <h1>TFC Requirements</h1>
+                <p>We are using Terraform Cloud to describe HashiCorp’s vision of a controlled
+                    lifecycle for machine images supported with automation. </p>
+            </div>
+            <div class="explainer" style="--splash-delay: 3">
+                <p>Please refer to the HCP Packer Essentials setup guide to configure
+                    your own TFC resources. </p>
+            </div>
+        </div>
+
+        <div class="form-container">
+
+            <div class="form-wrapper" id="tfc-form-display">
+
+                <form action="" method="post" novalidate id="tfc-form">
+
+                    {{ tfc_form.hidden_tag() }}
+
+                    {{ tfc_form.tfc_organization.label }} <br>
+                    {{ tfc_form.tfc_organization }}
+                    <a href="https://app.terraform.io/app/organizations" target="_blank">
+                        <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="TFC Organizations">
+                    </a>
+                    <br>
+
+                    {{ tfc_form.tfc_workspace.label }} <br>
+                    {{ tfc_form.tfc_workspace }}
+                    <a href="https://www.terraform.io/cloud-docs/workspaces/creating" target="_blank">
+                        <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="TFC Workspaces">
+                    </a>
+                    <br>
+                    {{ tfc_form.tfc_token.label }} <br>
+                    {{ tfc_form.tfc_token }}
+                    <a href="https://app.terraform.io/app/settings/tokens" target="_blank">
+                        <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="TFC Tokens">
+                    </a>
+                    <br>
+                    {{ tfc_form.save_tfc_data() }}
+
+                </form>
+
+                <div class="form-results" id="tfc-form-results">
+                    <p>TFC Organization</p>
+                    <div class="form-results-text">{{ tfc_organization }}</div>
+                    <p>TFC Workspace Name</p>
+                    <div class="form-results-text">{{ tfc_workspace }}</div>
+                    <p>TFC Token</p>
+                    <div class="form-results-text" data-text-private="true">{{ tfc_token }}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('setup_hcp') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('track_auth') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

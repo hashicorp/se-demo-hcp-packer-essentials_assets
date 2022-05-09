@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<style>
+</style>
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <div class="explainer-wrapper">
+
+            <h1>Summary of benefits</h1>
+            <table class="styled-table">
+                <tr>
+                    <th>Approach</th>
+                    <th>Benefits</th>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Process alignment</strong>:
+                        Establish the same process to develop, secure, validate and implement machine images across all
+                        Cloud platforms, VMware and Kubernetes environments.
+                    </td>
+                    <td>Teams meet the same standards for image creation in development, release and maintenance stages.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Portfolio enablement</strong>:
+                        Use machine images as part of a service offering that adheres to addressable business processes.
+                    </td>
+                    <td>Teams can align image assets in a central registry which promotes the appropriate buckets for
+                        the development, release, and maintenance stages.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Automation integration</strong>:
+                        Teams that consume machine images can rely on predictable outcomes regardless of the target
+                        platform.
+                    </td>
+                    <td>Teams use an approved, standard subprocess in the provisioning workflow stages as part of a
+                        service catalogue regardless of the type of asset or the target platform.</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('uc_02_workflow') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}

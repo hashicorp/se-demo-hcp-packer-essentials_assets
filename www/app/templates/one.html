@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+
+        <div class="explainer-wrapper" data-clickable="true">
+            <img class="explainer-image" src="{{ url_for('static', filename='img/Packer_VerticalLogo_Color_RGB.svg') }}"
+                alt="Vault">
+            <span class="tooltiptext" id="tooltiptext">What is Packer?</span>
+        </div>
+
+        <div class="explainer-wrapper">
+
+            <div class="explainer" style="--splash-delay: 1">
+                <h1>HashiCorp Packer</h1>
+                <p>Packer is an Open Source configuration and templatization software
+                    tool that helps create machine images for multiple platforms.</p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 3">
+                <p>Teams that use Packer consume machine images, or golden
+                    images, as appliances to deliver content faster,
+                    consistently and securely.</p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 6">
+                <p>Organizations that use Packer benefit from the standardization of
+                    desired states for machine images, leading to shorter delivery
+                    cycles and faster employee onboarding.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('two') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

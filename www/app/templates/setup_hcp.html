@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/forms.css') }}">
+
+<script type="module" src="{{ url_for('static', filename='js/hcp_form_handler.js') }}"></script>
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-forms">
+
+        <div class="explainer-wrapper" data-clickable="true">
+            <div class="explainer" style="--splash-delay: 1;">
+                <h1>HCP Requirements</h1>
+                <p>To describe the relationship between an Amazon Machine Image (AMI)
+                    and HashiCorp Packer we need access to your HCP organization.</p>
+            </div>
+            <div class="explainer" style="--splash-delay: 3">
+                <p>Please refer to the HCP Packer Essentials setup guide to configure
+                    your own HCP resources. </p>
+            </div>
+        </div>
+
+        <div class="form-container">
+
+            <div class="form-wrapper" id="hcp-form-display">
+
+                <form action="" method="post" novalidate id="hcp-form">
+
+                    {{ hcp_form.hidden_tag() }}
+
+                    {{ hcp_form.organization_id.label }} <br>
+                    {{ hcp_form.organization_id }}
+                    <a href="https://portal.cloud.hashicorp.com/orgs" target="_blank">
+                        <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="HCP Organization">
+                    </a>
+                    <br>
+                    {{ hcp_form.project_id.label }} <br>
+                    {{ hcp_form.project_id }} <br>
+                    {{ hcp_form.client_id.label }} <br>
+                    {{ hcp_form.client_id }}
+                    <a href="https://cloud.hashicorp.com/docs/hcp/admin/access-control/service-principals"
+                        target="_blank">
+                        <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="HCP Service Principals">
+                    </a>
+                    <br>
+                    {{ hcp_form.client_secret.label }} <br>
+                    {{ hcp_form.client_secret }} <br>
+                    {{ hcp_form.save_hcp_data() }}
+
+                </form>
+
+                <div class="form-results" id="hcp-form-results">
+                    <p>HCP Organization ID</p>
+                    <div class="form-results-text">{{ organization_id }}</div>
+                    <p>HCP Project ID</p>
+                    <div class="form-results-text">{{ project_id }}</div>
+                    <p>HCP Client ID</p>
+                    <div class="form-results-text">{{ client_id }}</div>
+                    <p>HCP Client Secret</p>
+                    <div class="form-results-text" data-text-private="true">{{ client_secret }}></div>
+                    <!-- <p>HCP Client Token</p>
+                    <div class="form-results-text" data-text-private="true">{{ client_token }}</div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('challenges') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('setup_tfc') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}

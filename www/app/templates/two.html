@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+
+        <div class="explainer-wrapper" data-clickable="true">
+            <img class="explainer-image" src="{{ url_for('static', filename='img/logo-hcp-packer.svg') }}"
+                alt="HashiCorp Cloud Platform Packer">
+            <span class="tooltiptext" id="tooltiptext">What is HCP Packer?</span>
+        </div>
+
+        <div class="explainer-wrapper">
+
+            <div class="explainer" style="--splash-delay: 1">
+                <h1>HCP Packer</h1>
+                <p>HCP Packer is a Cloud service that offers a cross cloud, central registry for
+                    machine images generated with Packer.</p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 3">
+                <p>Teams can orchestrate the lifecycle of a machine image through its
+                    inception, updated iterations, and a controlled retirement. </p>
+            </div>
+
+            <div class="explainer" style="--splash-delay: 6">
+                <p>The tacit significance is the introduction of modern automation workflows
+                    to reduce the overhead of creating, managing and releasing machine images
+                    across multiple platforms.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block last_page %}
+<a href="{{ url_for('one') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
+{% block next_page %}
+<a href="{{ url_for('two') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}
