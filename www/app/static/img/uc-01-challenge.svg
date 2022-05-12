@@ -113,8 +113,8 @@
                 </g>
             </g>
         </g>
-        <path id="Path" d="M233.5,75.6884584 L233.5,79.688 L279,79.6884584 L279,80.6884584 L233.5,80.688 L233.5,84.6884584 L224.5,80.1884584 L233.5,75.6884584 Z" fill="#292423" fill-rule="nonzero"></path>
-        <path id="Path" d="M233.5,226.688458 L233.5,230.688 L279,230.688458 L279,231.688458 L233.5,231.688 L233.5,235.688458 L224.5,231.188458 L233.5,226.688458 Z" fill="#292423" fill-rule="nonzero"></path>
+        <path id="Path" d="M270.5,75.6884584 L279.5,80.1884584 L270.5,84.6884584 L270.5,80.688 L225,80.6884584 L225,79.6884584 L270.5,79.688 L270.5,75.6884584 Z" fill="#292423" fill-rule="nonzero"></path>
+        <path id="Path" d="M270.5,226.688458 L279.5,231.188458 L270.5,235.688458 L270.5,231.688 L225,231.688458 L225,230.688458 L270.5,230.688 L270.5,226.688458 Z" fill="#292423" fill-rule="nonzero"></path>
         <text id="appuser-:-test123-db" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
             <tspan x="22.456" y="28">appuser : test123</tspan>
             <tspan x="27.912" y="38">dbuser : db1234</tspan>

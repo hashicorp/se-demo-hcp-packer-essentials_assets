@@ -115,6 +115,10 @@
             <tspan x="506.953047" y="53">image</tspan>
             <tspan x="499" y="62">validation</tspan>
         </text>
+        <text id="Ubuntu-Focal" font-family="Arial-BoldMT, Arial" font-size="9" font-weight="bold" line-spacing="9" letter-spacing="-0.018" fill="#666666">
+            <tspan x="688" y="79">Ubuntu </tspan>
+            <tspan x="691.981234" y="88">Focal</tspan>
+        </text>
         <text id="data-source-image-va" font-family="Arial-BoldMT, Arial" font-size="9" font-weight="bold" line-spacing="9" letter-spacing="-0.018" fill="#FFFFFF">
             <tspan x="382.954756" y="48">data source </tspan>
             <tspan x="373" y="57">image validation</tspan>
@@ -150,21 +154,29 @@
                 <tspan x="12.0118823" y="21">1</tspan>
             </text>
         </g>
+        <g id="Group-4" transform="translate(672.880118, 17.259349)">
+            <circle id="Oval" stroke="#00ACFF" stroke-width="2" fill-opacity="0.75" fill="#00ACFF" cx="15.1198823" cy="15" r="14"></circle>
+            <text id="2" transform="translate(15.119882, 14.000000) rotate(1.000000) translate(-15.119882, -14.000000) " font-family="Gilmer-Heavy, Gilmer" font-size="14" font-weight="700" letter-spacing="-0.028" fill="#FFFFFF">
+                <tspan x="10.9828823" y="21">2</tspan>
+            </text>
+        </g>
         <g id="Group-4" transform="translate(96.862665, 354.259349)">
             <circle id="Oval" stroke="#00ACFF" stroke-width="2" fill-opacity="0.75" fill="#00ACFF" cx="15.1373347" cy="15" r="14"></circle>
-            <text id="2" transform="translate(15.137335, 15.000000) rotate(1.000000) translate(-15.137335, -15.000000) " font-family="Gilmer-Heavy, Gilmer" font-size="14" font-weight="700" letter-spacing="-0.028" fill="#FFFFFF">
-                <tspan x="11.0003347" y="21">2</tspan>
+            <text id="3" transform="translate(15.137335, 15.000000) rotate(1.000000) translate(-15.137335, -15.000000) " font-family="Gilmer-Heavy, Gilmer" font-size="14" font-weight="700" letter-spacing="-0.028" fill="#FFFFFF">
+                <tspan x="10.8883347" y="21">3</tspan>
             </text>
         </g>
         <g id="Group-4" transform="translate(256.880118, 257.259349)">
             <circle id="Oval" stroke="#00ACFF" stroke-width="2" fill-opacity="0.75" fill="#00ACFF" cx="15.1198823" cy="15" r="14"></circle>
-            <text id="3" transform="translate(15.119882, 14.000000) rotate(1.000000) translate(-15.119882, -14.000000) " font-family="Gilmer-Heavy, Gilmer" font-size="14" font-weight="700" letter-spacing="-0.028" fill="#FFFFFF">
-                <tspan x="10.8708823" y="21">3</tspan>
+            <text id="4" transform="translate(15.119882, 14.000000) rotate(1.000000) translate(-15.119882, -14.000000) " font-family="Gilmer-Heavy, Gilmer" font-size="14" font-weight="700" letter-spacing="-0.028" fill="#FFFFFF">
+                <tspan x="10.7658823" y="21">4</tspan>
             </text>
         </g>
         <path id="Path-18" d="M64,300.5 C66.4852814,300.5 68.5,302.514719 68.5,305 C68.5,307.485281 66.4852814,309.5 64,309.5 C61.6839659,309.5 59.7765864,307.750342 59.5275426,305.500707 L56,305.5 L56,304.5 L59.5274316,304.500297 C59.7760186,302.250179 61.6836212,300.5 64,300.5 Z M52,304.5 L52,305.5 L48,305.5 L48,304.5 L52,304.5 Z M44,304.5 L44,305.5 L40,305.5 L40,304.5 L44,304.5 Z M32.5,304 L32.5,304.5 L36,304.5 L36,305.5 L31.5,305.5 L31.5,304 L32.5,304 Z M32.5,297 L32.5,301 L31.5,301 L31.5,297 L32.5,297 Z M32.5,289 L32.5,293 L31.5,293 L31.5,289 L32.5,289 Z M32.5,281 L32.5,285 L31.5,285 L31.5,281 L32.5,281 Z M32.5,273 L32.5,277 L31.5,277 L31.5,273 L32.5,273 Z M32.5,265 L32.5,269 L31.5,269 L31.5,265 L32.5,265 Z M32.5,257 L32.5,261 L31.5,261 L31.5,257 L32.5,257 Z M32.5,249 L32.5,253 L31.5,253 L31.5,249 L32.5,249 Z M32.5,241 L32.5,245 L31.5,245 L31.5,241 L32.5,241 Z M32.5,233 L32.5,237 L31.5,237 L31.5,233 L32.5,233 Z M32.5,225 L32.5,229 L31.5,229 L31.5,225 L32.5,225 Z M32.5,217 L32.5,221 L31.5,221 L31.5,217 L32.5,217 Z M32.5,209 L32.5,213 L31.5,213 L31.5,209 L32.5,209 Z M55.5,203.5 L64.5,208 L55.5,212.5 L55.5,203.5 Z M39,207.5 L39,208.5 L35,208.5 L35,207.5 L39,207.5 Z M47,207.5 L47,208.5 L43,208.5 L43,207.5 L47,207.5 Z M55,207.5 L55,208.5 L51,208.5 L51,207.5 L55,207.5 Z" fill="#979797" fill-rule="nonzero"></path>
         <text id="triggers" transform="translate(22.400000, 257.600000) rotate(-90.000000) translate(-22.400000, -257.600000) " font-family="Arial-BoldMT, Arial" font-size="9" font-weight="bold" letter-spacing="-0.018" fill="#1D1F25">
             <tspan x="5.71784961" y="256">triggers</tspan>
         </text>
+        <rect id="Rectangle" fill="#FFFFFF" x="644" y="68" width="24" height="24"></rect>
+        <path d="M644.4,64 C641.9696,64 640,65.968 640,68.4 L640,91.6 C640,94.032 641.9696,96 644.4,96 L667.6,96 C670.0304,96 672,94.032 672,91.6 L672,68.4 C672,65.968 670.0304,64 667.6,64 L644.4,64 Z M663.552,73.952 C664.0208,73.488 664.7792,73.488 665.248,73.952 C665.7168,74.416 665.7168,75.184 665.248,75.648 L653.248,87.648 C652.7792,88.112 652.0208,88.112 651.552,87.648 L646.752,82.848 C646.2832,82.384 646.2832,81.616 646.752,81.152 C647.2208,80.688 647.9792,80.688 648.448,81.152 L652.4,85.104 L663.552,73.952 Z" id="Union_115" fill="#60DEA9"></path>
     </g>
 </svg>

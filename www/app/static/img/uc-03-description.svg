@@ -2,7 +2,7 @@
 <svg width="500px" height="288px" viewBox="0 0 500 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Isometric_6</title>
     <g id="Isometric_6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path id="Path" d="M189,216 L189,220 L300.5,220 L300.5,221 L189,221 L189,225 L180,220.5 L189,216 Z" fill="#292423" fill-rule="nonzero"></path>
+        <path id="Path-18" d="M291.5,218 L300.5,222.5 L291.5,227 L291.5,223 L180,223 L180,222 L291.5,222 L291.5,218 Z" fill="#666666" fill-rule="nonzero"></path>
         <line x1="240.5" y1="270.5" x2="240.5" y2="9.5" id="Line" stroke="#343536" stroke-linecap="square" stroke-dasharray="5,5"></line>
         <rect id="Rectangle" fill="#FFFFFF" x="221" y="213" width="40" height="15"></rect>
         <g id="Group" transform="translate(87.629333, 37.431667)">
