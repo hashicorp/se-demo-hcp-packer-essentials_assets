@@ -129,8 +129,8 @@
             <tspan x="29.969836" y="208">OpenSSH 7.8p1</tspan>
             <tspan x="44.689836" y="218">nginx 1.20.2</tspan>
         </text>
-        <text id="sudoers---AIM-OpenSS" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
-            <tspan x="414" y="186">sudoers - AIM </tspan>
+        <text id="sudoers---IAM-OpenSS" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
+            <tspan x="414" y="186">sudoers - IAM </tspan>
             <tspan x="414" y="196">OpenSSH 7.8p1</tspan>
             <tspan x="414" y="206">PostgreSQL 14.2</tspan>
         </text>
