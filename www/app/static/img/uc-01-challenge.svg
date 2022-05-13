@@ -122,9 +122,9 @@
             <tspan x="24.496" y="58">OpenSSH 6.6.1p1</tspan>
             <tspan x="46.232" y="68">nginx 1.19.6</tspan>
         </text>
-        <text id="appuser-:-AIM-role-d" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
-            <tspan x="20.369836" y="178">appuser : AIM role</tspan>
-            <tspan x="25.521836" y="188">dbuser : AIM role</tspan>
+        <text id="appuser-:-IAM-role-d" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
+            <tspan x="20.369836" y="178">appuser : IAM role</tspan>
+            <tspan x="25.521836" y="188">dbuser : IAM role</tspan>
             <tspan x="35.849836" y="198">sudoers - IAM</tspan>
             <tspan x="29.969836" y="208">OpenSSH 7.8p1</tspan>
             <tspan x="44.689836" y="218">nginx 1.20.2</tspan>

@@ -149,9 +149,9 @@
             <tspan x="12.484918" y="234">OpenSSH 7.8p1</tspan>
             <tspan x="19.844918" y="244">nginx 1.20.2</tspan>
         </text>
-        <text id="appuser-:-AIM-role-d" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
-            <tspan x="133.684918" y="266">appuser : AIM role</tspan>
-            <tspan x="136.260918" y="276">dbuser : AIM role</tspan>
+        <text id="appuser-:-IAM-role-d" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal" fill="#343536">
+            <tspan x="133.684918" y="266">appuser : IAM role</tspan>
+            <tspan x="136.260918" y="276">dbuser : IAM role</tspan>
         </text>
         <line x1="43" y1="109" x2="42.7643529" y2="93.8115416" id="Path" stroke="#292423" stroke-width="2" transform="translate(43.000000, 101.811542) scale(-1, 1) translate(-43.000000, -101.811542) "></line>
         <g id="Group-3" transform="translate(125.000000, 120.000000)">
