@@ -17,5 +17,12 @@ git clone https://github.com/hashicorp-demoapp/hashicups-setups
 cd hashicups-setups/docker-compose-deployment
 git checkout server
 
+# Changing the default entry point password for DB to avoid
+# default password in config file.
+ RANDOM_PASSWORD=$(openssl rand -hex 20)
+ sudo sed -i "s/=password/=$RANDOM_PASSWORD/g" docker-compose.yaml
+ sudo sed -i "s/=password/=$RANDOM_PASSWORD/g" conf.json
+ unset RANDOM_PASSWORD
+
 # Start HashiCups in background
 sudo docker-compose up -d
