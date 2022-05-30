@@ -25,7 +25,7 @@ class TFCForm(FlaskForm):
 
 @app.route('/')
 def hello_world():
-  session.clear()
+  # session.clear()
   writeToLocalConfigFile()
   return render_template('splash.html')
 
