@@ -7,6 +7,35 @@
 
 <script type="module" src="{{ url_for('static', filename='js/hcp_form_handler.js') }}"></script>
 
+<style>
+    .form-errors {
+        color: #801515;
+        font-size: small;
+        float: right;
+        animation: blinker 0.8s linear;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0)
+        }
+
+        50% {
+            transform: translateX(-2px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+</style>
+
 {% endblock %}
 
 {% block main_body %}
@@ -30,32 +59,64 @@
 
             <div class="form-wrapper" id="hcp-form-display">
 
-                <form action="" method="post" novalidate id="hcp-form">
+                <form action="" method="post" novalidate id="hcp-form" data-confettied="true">
 
                     {{ hcp_form.hidden_tag() }}
 
-                    {{ hcp_form.organization_id.label }} <br>
-                    {{ hcp_form.organization_id }}
+                    {{ hcp_form.organization_id.label }}
+                    {% if hcp_form.organization_id.errors %}
+                    <div class="form-errors">
+                        {% for error in hcp_form.organization_id.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <!-- <br> -->
+                    {{ hcp_form.organization_id(autocomplete="off", value=organization_id, required='required') }}
                     <a href="https://portal.cloud.hashicorp.com/orgs" target="_blank">
                         <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="HCP Organization">
                     </a>
                     <br>
-                    {{ hcp_form.project_id.label }} <br>
-                    {{ hcp_form.project_id }} <br>
-                    {{ hcp_form.client_id.label }} <br>
-                    {{ hcp_form.client_id }}
+
+                    {{ hcp_form.project_id.label }}
+                    {% if hcp_form.project_id.errors %}
+                    <div class="form-errors">
+                        {% for error in hcp_form.project_id.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {{ hcp_form.project_id(autocomplete="off", value=project_id, required='required') }} <br>
+
+                    {{ hcp_form.client_id.label }}
+                    {% if hcp_form.client_id.errors %}
+                    <div class="form-errors">
+                        {% for error in hcp_form.client_id.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {{ hcp_form.client_id(autocomplete="off", value=client_id, required='required') }}
                     <a href="https://cloud.hashicorp.com/docs/hcp/admin/access-control/service-principals"
                         target="_blank">
                         <img src="{{ url_for('static', filename='img/icon-link.svg') }}" alt="HCP Service Principals">
                     </a>
                     <br>
-                    {{ hcp_form.client_secret.label }} <br>
-                    {{ hcp_form.client_secret }} <br>
+
+                    {{ hcp_form.client_secret.label }}
+                    {% if hcp_form.client_secret.errors %}
+                    <div class="form-errors">
+                        {% for error in hcp_form.client_secret.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {{ hcp_form.client_secret(autocomplete="off", value=client_secret, required='required') }} <br>
                     {{ hcp_form.save_hcp_data() }}
 
                 </form>
 
-                <div class="form-results" id="hcp-form-results">
+                <!-- <div class="form-results" id="hcp-form-results">
                     <p>HCP Organization ID</p>
                     <div class="form-results-text">{{ organization_id }}</div>
                     <p>HCP Project ID</p>
@@ -64,9 +125,9 @@
                     <div class="form-results-text">{{ client_id }}</div>
                     <p>HCP Client Secret</p>
                     <div class="form-results-text" data-text-private="true">{{ client_secret }}></div>
-                    <!-- <p>HCP Client Token</p>
-                    <div class="form-results-text" data-text-private="true">{{ client_token }}</div> -->
-                </div>
+                    <p>HCP Client Token</p>
+                    <div class="form-results-text" data-text-private="true">{{ client_token }}</div>
+                </div> -->
 
             </div>
         </div>

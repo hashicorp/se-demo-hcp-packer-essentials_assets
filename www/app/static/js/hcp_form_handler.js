@@ -3,7 +3,7 @@ import { confetti } from './confetti.min.js';
 const start = () => {
     setTimeout(function () {
         confetti.start()
-    }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    }, 100);
 };
 
 //  Stop
@@ -11,8 +11,18 @@ const start = () => {
 const stop = () => {
     setTimeout(function () {
         confetti.stop()
-    }, 2000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    }, 1000);
 };
+
+const onBlur = (e) => {
+    if (e.target.value === '') {
+        e.target.value = e.target.defaultValue;
+    }
+}
+
+const onFocus = (e) => {
+    e.target.value = '';
+}
 
 async function getFormStatus(form_name) {
     const stat_url = `/get_form_status?form_name=${form_name}`
@@ -23,28 +33,34 @@ async function getFormStatus(form_name) {
 
 window.onload = function () {
     const hcp_form = document.getElementById("hcp-form");
-    const hcp_form_display = document.getElementById("hcp-form-display");
-    const hcp_form_results = document.getElementById("hcp-form-results");
+    const input_divs = [].slice.call(hcp_form.querySelectorAll('input[type="text"]'));
+
+    input_divs.forEach(element => {
+        element.addEventListener('focus', onFocus);
+        element.addEventListener('blur', onBlur);
+    });
+
+    hcp_form.addEventListener('submit', () => {
+        localStorage.do_HCP_Confetti = 'true';
+    });
 
     getFormStatus('hcp_form').then(jsonbody => {
         const form_status = jsonbody["ready"];
+        const doConfetti = localStorage.do_HCP_Confetti
 
-        if (form_status) {
-            hcp_form_display.removeChild(hcp_form);
-            hcp_form_results.style.display = "block";
+        if (form_status && doConfetti === 'true') {
+            start();
+            stop();
+            localStorage.do_HCP_Confetti = 'false'
+            // input_divs.forEach(element => {
+            //     //element.type = "password"
 
-            // const result_divs = [].slice.call(hcp_form_results.getElementsByTagName('div'));
-            const result_divs = [].slice.call(document.querySelectorAll("[data-text-private='true']"));
-
-            result_divs.forEach(element => {
-                const string = element.innerHTML;
-                const trimmedString = string.length > 10 ? string.substring(0, 10 - 3) + "..." : string
-                element.innerHTML = trimmedString
-
-                start();
-                stop();
-            });
+            //     const string = element.defaultValue;
+            //     const trimmedString = string.length > 10 ? string.substring(0, 10 - 3) + "..." : string
+            //     element.value = trimmedString
+            // });
         }
     });
+
 }
 

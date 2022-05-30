@@ -1,9 +1,9 @@
 from flask import Flask
-from flask import render_template, flash, request, session
+from flask import render_template, flash, request, session, redirect, url_for
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms import StringField, PasswordField, TextAreaField, SubmitField
+from wtforms.validators import InputRequired, EqualTo
 
 import sys, requests, json
 
@@ -11,21 +11,21 @@ app = Flask(__name__, template_folder="templates")
 app.config['SECRET_KEY'] = 'correct-horse-battery-staple'
 
 class HCPForm(FlaskForm):
-    organization_id = StringField('Organization ID', validators=[DataRequired()])
-    project_id      = StringField('Project ID', validators=[DataRequired()])
-    client_id       = StringField('HCP Client ID', validators=[DataRequired()])
-    client_secret   = PasswordField('HCP Client Secret', validators=[DataRequired()])
+    organization_id = StringField('HCP Organization ID', validators=[InputRequired(message='Required')])
+    project_id      = StringField('HCP Project ID', validators=[InputRequired(message='Required')])
+    client_id       = StringField('HCP Client ID', validators=[InputRequired(message='Required')])
+    client_secret   = StringField('HCP Client Secret', validators=[InputRequired(message='Required')])
     save_hcp_data   = SubmitField('Save')
 
 class TFCForm(FlaskForm):
-    tfc_organization = StringField('TFC Organization', validators=[DataRequired()])
-    tfc_workspace    = StringField('TFC Workspace Name', validators=[DataRequired()])
-    tfc_token        = PasswordField('TCF Token', validators=[DataRequired()])
+    tfc_organization = StringField('TFC Organization', validators=[InputRequired(message='Required')])
+    tfc_workspace    = StringField('TFC Workspace Name', validators=[InputRequired(message='Required')])
+    tfc_token        = PasswordField('TFC API Token', validators=[InputRequired(message='Required')])
     save_tfc_data    = SubmitField('Save')
 
 @app.route('/')
 def hello_world():
-  # session.clear()
+  session.clear()
   writeToLocalConfigFile()
   return render_template('splash.html')
 
@@ -58,14 +58,40 @@ def setup_hcp():
 
   hcp_form = HCPForm()
 
+  if request.method == 'GET':
+    if not session.get('organization_id'):
+      session['organization_id'] = ""
+    if not session.get('project_id'):
+      session['project_id'] = ""
+    if not session.get('hcp_client_id'):
+      session['hcp_client_id'] = ""
+    if not session.get('hcp_client_secret'):
+      session['hcp_client_secret'] = ""
+
   if request.method == 'POST':
 
-    if hcp_form.validate_on_submit() and (hcp_form.client_id.data and hcp_form.client_secret.data):
+    if hcp_form.organization_id.data:
       session['organization_id'] = hcp_form.organization_id.data
-      session['project_id']      = hcp_form.project_id.data
-      session['hcp_client_id']   = hcp_form.client_id.data
+    else:
+      session['organization_id'] = ""
+
+    if hcp_form.project_id.data:
+      session['project_id'] = hcp_form.project_id.data
+    else: 
+      session['project_id'] = ""
+
+    if hcp_form.client_id.data:
+      session['hcp_client_id'] = hcp_form.client_id.data
+    else:
+      session['hcp_client_id'] = ""
+
+    if  hcp_form.client_secret.data:
       session['hcp_client_secret'] = hcp_form.client_secret.data
-      
+    else:
+      session['hcp_client_secret'] = ""
+
+    if hcp_form.validate_on_submit():
+
       validation = getHCPBearerToken()
 
       if (validation.status_code == 200):  
@@ -80,8 +106,16 @@ def setup_hcp():
       project_id=session.get('project_id'),
       client_id=session.get('hcp_client_id'), 
       client_secret=session.get('hcp_client_secret'),
-      client_token=session.get('hcp_client_token'),
       hcp_form=hcp_form)
+
+@app.route('/setup_hcp_results')
+def setup_hcp_results():
+  return render_template('setup_hcp_results.html', 
+      organization_id=session.get('organization_id'),
+      project_id=session.get('project_id'),
+      client_id=session.get('hcp_client_id'), 
+      client_secret=session.get('hcp_client_secret'),
+      client_token=session.get('hcp_client_token'))
 
 @app.route('/setup_tfc', methods=('GET', 'POST'))
 def setup_tfc():
@@ -104,7 +138,7 @@ def setup_tfc():
 def get_form_status():
   form_name = request.args.get('form_name')
   if form_name == "hcp_form":
-    if session.get('hcp_client_id') is None or session.get('hcp_client_secret') is None:
+    if not session.get('organization_id') or not session.get('project_id') or not session.get('hcp_client_id') or not session.get('hcp_client_secret'):
       return {"ready": False}
     else:
       return {"ready": True}
@@ -144,7 +178,6 @@ def getHCPBearerToken():
   response = requests.post(url, json = data, auth = auth, headers = headers)
 
   return response
-
 
 @app.route('/uc-01-challenge')
 def uc_01_challenge():

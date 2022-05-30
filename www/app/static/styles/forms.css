@@ -68,9 +68,9 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-#hcp-form-results {
+/* #hcp-form-results {
     display: none;
-}
+} */
 
 #tfc-form-results {
     display: none;
