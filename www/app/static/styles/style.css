@@ -277,3 +277,16 @@ a {
     padding: 20px;
     vertical-align: top;
 }
+
+.form-errors {
+    color: #801515;
+    font-size: small;
+    float: right;
+    animation: blinker 0.8s linear;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0.6;
+    }
+}

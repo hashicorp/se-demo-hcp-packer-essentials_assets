@@ -3,7 +3,7 @@ import { confetti } from './confetti.min.js';
 const start = () => {
     setTimeout(function () {
         confetti.start()
-    }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
 };
 
 //  Stop
@@ -11,8 +11,18 @@ const start = () => {
 const stop = () => {
     setTimeout(function () {
         confetti.stop()
-    }, 2000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+    }, 1000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
 };
+
+const onBlur = (e) => {
+    if (e.target.value === '') {
+        e.target.value = e.target.defaultValue;
+    }
+}
+
+const onFocus = (e) => {
+    e.target.value = '';
+}
 
 async function getFormStatus(form_name) {
     const stat_url = `/get_form_status?form_name=${form_name}`
@@ -23,27 +33,32 @@ async function getFormStatus(form_name) {
 
 window.onload = function () {
     const tfc_form = document.getElementById("tfc-form");
-    const tfc_form_display = document.getElementById("tfc-form-display");
-    const tfc_form_results = document.getElementById("tfc-form-results");
+    const input_divs = [].slice.call(tfc_form.querySelectorAll('input[type="text"]'));
+
+    input_divs.forEach(element => {
+        element.addEventListener('focus', onFocus);
+        element.addEventListener('blur', onBlur);
+    });
+
+    tfc_form.addEventListener('submit', () => {
+        localStorage.do_TFC_Confetti = 'true';
+    });
 
     getFormStatus('tfc_form').then(jsonbody => {
         const form_status = jsonbody["ready"];
+        const doConfetti = localStorage.do_TFC_Confetti
 
-        if (form_status) {
-            tfc_form_display.removeChild(tfc_form);
-            tfc_form_results.style.display = "block";
+        // if (form_status) {
+        // // tfc_form_display.removeChild(tfc_form);
+        // tfc_form_results.style.display = "block";
 
-            const result_divs = [].slice.call(document.querySelectorAll("[data-text-private='true']"));
-
-            result_divs.forEach(element => {
-                const string = element.innerHTML;
-                const trimmedString = string.length > 10 ? string.substring(0, 10 - 3) + "..." : string
-                element.innerHTML = trimmedString
-            });
-
+        if (form_status && doConfetti === 'true') {
             start();
             stop();
+            localStorage.do_TFC_Confetti = 'false'
         }
+
+        // }
     });
 
 }

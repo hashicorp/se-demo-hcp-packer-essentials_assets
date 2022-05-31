@@ -7,35 +7,6 @@
 
 <script type="module" src="{{ url_for('static', filename='js/hcp_form_handler.js') }}"></script>
 
-<style>
-    .form-errors {
-        color: #801515;
-        font-size: small;
-        float: right;
-        animation: blinker 0.8s linear;
-    }
-
-    @keyframes blinker {
-        50% {
-            opacity: 0.6;
-        }
-    }
-
-    @keyframes shake {
-        0% {
-            transform: translateX(0)
-        }
-
-        50% {
-            transform: translateX(-2px);
-        }
-
-        100% {
-            transform: translateX(0px);
-        }
-    }
-</style>
-
 {% endblock %}
 
 {% block main_body %}

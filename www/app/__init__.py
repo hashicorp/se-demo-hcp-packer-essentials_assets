@@ -20,14 +20,18 @@ class HCPForm(FlaskForm):
 class TFCForm(FlaskForm):
     tfc_organization = StringField('TFC Organization', validators=[InputRequired(message='Required')])
     tfc_workspace    = StringField('TFC Workspace Name', validators=[InputRequired(message='Required')])
-    tfc_token        = PasswordField('TFC API Token', validators=[InputRequired(message='Required')])
+    tfc_token        = StringField('TFC API Token', validators=[InputRequired(message='Required')])
     save_tfc_data    = SubmitField('Save')
 
 @app.route('/')
 def hello_world():
-  # session.clear()
-  writeToLocalConfigFile()
-  return render_template('splash.html')
+  if not session.get('started'):
+    session.clear()
+    writeToLocalConfigFile()
+    session['started'] = "true"
+    return render_template('splash.html')
+
+  return render_template('about.html')
 
 @app.route('/about')
 def about():
@@ -121,11 +125,32 @@ def setup_hcp_results():
 def setup_tfc():
   tfc_form = TFCForm()
 
+  if request.method == 'GET':
+    if not session.get('tfc_organization'):
+      session['tfc_organization'] = ""
+    if not session.get('tfc_workspace'):
+      session['tfc_workspace'] = ""
+    if not session.get('tfc_token'):
+      session['tfc_token'] = ""
+
   if request.method == 'POST':
-    if tfc_form.validate_on_submit() and (tfc_form.tfc_organization.data and tfc_form.tfc_workspace.data and tfc_form.tfc_token.data):
+
+    if tfc_form.tfc_organization.data:
       session['tfc_organization'] = tfc_form.tfc_organization.data
+    else:
+      session['tfc_organization'] = ""
+
+    if tfc_form.tfc_workspace.data:
       session['tfc_workspace'] = tfc_form.tfc_workspace.data
+    else:
+      session['tfc_workspace'] = ""
+
+    if tfc_form.tfc_token.data:
       session['tfc_token'] = tfc_form.tfc_token.data
+    else:
+      session['tfc_token'] = ""
+
+    if tfc_form.validate_on_submit():
       writeToLocalConfigFile()
 
   return render_template('setup_tfc.html',
@@ -136,18 +161,18 @@ def setup_tfc():
 
 @app.route('/get_form_status')
 def get_form_status():
+  
   form_name = request.args.get('form_name')
+
   if form_name == "hcp_form":
     if not session.get('organization_id') or not session.get('project_id') or not session.get('hcp_client_id') or not session.get('hcp_client_secret'):
       return {"ready": False}
-    else:
-      return {"ready": True}
+
   elif form_name == "tfc_form":
-    if session.get('tfc_workspace') is None or session.get('tfc_token') is None:
+    if not session.get('tfc_organization') or not session.get('tfc_workspace') or not session.get('tfc_token'):
       return {"ready": False}
-    else:
-      return {"ready": True}
-  return {"ready": False}
+
+  return {"ready": True}
 
 @app.route('/track_auth')
 def track_auth():
