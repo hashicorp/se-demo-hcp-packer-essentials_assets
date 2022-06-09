@@ -37,7 +37,7 @@ For instance, the required ULR to create a channel in the HCP registry is as fol
 https://api.cloud.hashicorp.com/packer/2021-04-30/organizations/ac1ee2f1-42a7-4165-4efd-379187552e02/projects/4f204934-68cb-4165-43e7-abc91fb8987d
 ```
 
-With the operation is implemented as follows:
+With a general operation implemented as follows:
 
 ```bash
 curl -s -H "Authorization: Bearer *********" \
@@ -46,7 +46,7 @@ curl -s -H "Authorization: Bearer *********" \
   -X POST https://api.cloud.hashicorp.com/packer/2021-04-30/organizations/ac1ee2f1-42a7-4165-4efd-379187552e02/projects/4f204934-68cb-4165-43e7-abc91fb8987d/images/hashicups-frontend-ubuntu/channels
 ```
 
-For ease of readability, update and future control, we can express the requirements with Bash shortcuts as follows:
+For ease of readability, update and future control, we express the operation with Bash shortcuts as follows:
 
 ```bash
 # Our given identity during the set up stage
@@ -67,7 +67,7 @@ export HCP_PACKER_BASE_URL=https://api.cloud.hashicorp.com/packer/2021-04-30/org
 export HCP_PACKER_API_CREATE_CHANNEL=${HCP_PACKER_BASE_URL}/images/${HCP_PACKER_BUCKET_SLUG}/channels
 ```
 
-With the URL shortcuts, the operation implemented in the track is easier to interpret and explain during a demonstration:
+With the URL shortcuts, the operation, as implemented in the track, is easier to interpret and explain during a demonstration:
 
 ```bash
 curl -s -H "Authorization: Bearer ${HCP_CLIENT_TOKEN}" \
@@ -84,25 +84,29 @@ Notable is the use of [setup-deps-hashicups.sh](./assets/packer/production/setup
 
 ## `.assets.terraform`
 
-The [Terraform](./assets/terraform/) folder contains deployment templates for Terraform. While the content is distributed across development and production, the same material is used in both exercises. However, during the first technical challenge during the demonstration, the user creates a local deployment under the development folder - which subsequently contains a Terraform state file.
+The [Terraform](./assets/terraform/) folder contains deployment templates for Terraform. While the content is distributed across development and production, the same material is used in both exercises. However, during the first technical challenge in the demonstration, the user creates a local deployment under the development folder - which subsequently contains a Terraform state file.
 
 ## `.assets.watchdog`
 
 The [watchdog](./assets/watchdog/) folder contains a custom Python program to monitor arbitrary changes in a given directory. When changes are detected, the Python program launches a back-end script to do the following:
 
 1. Copy the Terraform production folder - simulating a branch fork
-2. Crate a backend template for a workspace in Terraform Cloud
+2. Create a backend template for a workspace in Terraform Cloud
 3. Create a template for `terraformrc` 
 4. Initialize Terraform - which creates the TFC workspace
 5. Upload required AWS and HCP credentials to the TFC workspace
 6. Get the HCP Packer runtask ID from the TFC org (if it exists)
-7. Attach the HCP Packer runtask to the TFC workspace
+7. Attach the HCP Packer runtask to the TFC workspace (if it exists)
 8. Run remote `terraform apply` for the TFC workspace
 9. Tidy up and remove TFC sensitive data from this branch 
 
 ## `.www`
 
-The [`www`](./www) folder contains our custom `Explainer` Flask application. The application is intantiated in the demonstration as a production item. It's purpose is to provide an interactive visual guide during the demonstration. 
+The [`www`](./www) folder contains our custom **`Explainer`** Flask application. The application is intantiated in the demonstration as a production item. It's purpose is to provide an interactive visual guide during the demonstration. At the moment of writing this document, we are still exploring options with:
+
+- [reveal.js](https://revealjs.com/)
+- [remarkjs](https://remarkjs.com/), and
+- [WebSlides](https://webslides.tv/)
 
 The motivation for this Explainer is to make use of the real estate available in the Instruqt Track during the demonstration. The material is identical to the slides in the HCP Packer Essentials - [Presentation][3].
 
