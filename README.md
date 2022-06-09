@@ -80,7 +80,7 @@ curl -s -H "Authorization: Bearer ${HCP_CLIENT_TOKEN}" \
 
 The [Packer](./assets/packer/) folder contains the Packer templates that users modify during the demonstration.
 
-Notable is the use of [setup-deps-hashicups.sh](./assets/packer/production/setup-deps-hashicups.sh) to deploy the HashiCups application. The setup-deps-hashicups.sh is copied from [`learn-packer-multicloud`][8] couresy of our Learn Team.
+Notable is the use of [setup-deps-hashicups.sh](./assets/packer/production/setup-deps-hashicups.sh) to deploy the HashiCups application. The setup-deps-hashicups.sh is copied from [`learn-packer-multicloud`][8] courtesy of our Learn Team.
 
 ## `.assets.terraform`
 
