@@ -16,6 +16,7 @@ export HCP_PACKER_DELETE_BUCKET=${HCP_PACKER_BASE_URL}/images/${HCP_PACKER_BUCKE
 
 # TFC API shortcuts
 export TCF_API_BASE_URL=https://app.terraform.io/api/v2
+export TFE_WORKSPACE_ID="temp"
 
 export TFC_API_ACCT_DETAILS=${TCF_API_BASE_URL}/account/details
 export TFC_API_SHOW_WORKSPACE=${TCF_API_BASE_URL}/organizations/${TFE_ORG}/workspaces/${TFE_WORKSPACE}
