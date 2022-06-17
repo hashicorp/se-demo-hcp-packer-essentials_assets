@@ -113,7 +113,7 @@ The motivation for this Explainer is to make use of the real estate available in
 [1]: <https://play.instruqt.com/hashicorp/tracks/hcp-packer-essentials> "HCP Packer Essentials - Instruqt Track"
 [2]: <https://docs.google.com/document/d/1a8JTFHj6WiEcHNVLKaiA7218FrJuraUy8b9Kub1nxrM/edit?usp=sharing> "HCP Packer Essentials - Demo Guide"
 [3]: <https://docs.google.com/presentation/d/1DPT6DLvk6MVa46pTObDnjKxNqeXZBeVfXkgacW-UmWc/edit?usp=sharing> "HCP Packer Essentials - Presentation"
-[4]: <https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley> "HCP Packer Essentials - Recording"
+[4]: <https://drive.google.com/file/d/1lVIKBJNp6UEfEZCYT9qra1xYFcG8xVZb/view?usp=sharing> "HCP Packer Essentials - Video Walkthrough"
 [5]: <https://github.com/hashicorp/se-demo-hcp-packer-essentials> "HCP Packer Essentials - Instruqt Track"
 [6]: <https://hashicorp.wufoo.com/forms/field-requests-products-assets> "Field Request form"
 [7]: <https://hashicorp.slack.com/archives/CGYB4R3NX> "proj-instruct"

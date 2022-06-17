@@ -24,8 +24,7 @@ export TFC_API_DELETE_WORKSPACE=${TCF_API_BASE_URL}/organizations/${TFE_ORG}/wor
 export TFC_API_PUSH_VARS=${TCF_API_BASE_URL}/vars
 export TFC_API_LIST_RUNTASK=${TCF_API_BASE_URL}/organizations/${TFE_ORG}/tasks
 
-# This shortcut are here for consistency but  won't work because we don't know the workspace id. 
+# This shortcut is here for consistency but won't work because we don't know the workspace id. 
 # Even when this file is sourced by the workflow watchdog, it won't work until the workspace id is sourced.
 
-export TFC_API_ATTACH_RUNTASK=${TCF_API_BASE_URL}/workspaces/${TFE_WORKSPACE_ID}/tasks
 export TFC_API_ATTACH_RUNTASK=${TCF_API_BASE_URL}/workspaces/${TFE_WORKSPACE_ID}/tasks
