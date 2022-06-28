@@ -1,54 +1,54 @@
-{% extends 'base.html' %}
-
-{% block head %}
-{{ super() }}
-{% endblock %}
-
-{% block main_body %}
-
-<div class="main-container">
-    <div class="main-content">
-
-        <div class="explainer-wrapper">
-
-            <div class="explainer" style="--splash-delay: 1">
-                <h1>HCP Packer Essentials</h1>
-                <p>This demonstration explores the core benefits of HCP Packer.
-                    Please follow the HCP Packer Essentials
-                    <strong>
-                        <a href="https://docs.google.com/document/d/1a8JTFHj6WiEcHNVLKaiA7218FrJuraUy8b9Kub1nxrM/edit#heading=h.b0m9gjwy6vkm"
-                            target="_blank">
-                            Getting Started</a>
-                    </strong> and
-                    <strong>
-                        <a href="https://docs.google.com/document/d/1a8JTFHj6WiEcHNVLKaiA7218FrJuraUy8b9Kub1nxrM"
-                            target="_blank">
-                            Demo Guide</a>
-                    </strong>
-                    documentation to familiarize yourself with the setup, challenges,
-                    narrative and the steps to showcase during this session.
-                </p>
+<This file formats the first slide under the Exaplainer tab in challenge 0>
+    {% extends 'base.html' %}
+    
+    {% block head %}
+    {{ super() }}
+    {% endblock %}
+    
+    {% block main_body %}
+    
+    <div class="main-container">
+        <div class="main-content">
+    
+            <div class="explainer-wrapper">
+    
+                <div class="explainer" style="--splash-delay: 1">
+                    <h1>HCP Packer Essentials</h1>
+                    <p>This demonstration explores the core benefits of HCP Packer.
+                        Please follow the HCP Packer Essentials
+                        <strong>
+                            <a href="https://docs.google.com/document/d/1a8JTFHj6WiEcHNVLKaiA7218FrJuraUy8b9Kub1nxrM/edit#heading=h.b0m9gjwy6vkm"
+                                target="_blank">
+                                Getting Started</a>
+                        </strong> and
+                        <strong>
+                            <a href="https://docs.google.com/document/d/1a8JTFHj6WiEcHNVLKaiA7218FrJuraUy8b9Kub1nxrM"
+                                target="_blank">
+                                Demo Guide</a>
+                        </strong>
+                        documentation to set up and familiarize yourself with HCP Packer.
+                    </p>
+                </div>
+    
+                <div class="explainer" style="--splash-delay: 3">
+                    <p>In this demonstration, you will be shown the benefits of HashiCorp Packer and how to convert a manual runbook into a Packer
+                        template.</p>
+                </div>
+    
+                <div class="explainer" style="--splash-delay: 6">
+                    <p>HashiCorp Packer is a tool that helps you build automated machine images. This helps companies create their golden images
+                        then keep track of them using HCP Packer. 
+                    </p>
+                </div>
             </div>
-
-            <div class="explainer" style="--splash-delay: 3">
-                <p>There are three self-contained scenarios in this demonstration.
-                    We aim to maintain a minimalist design principle so that each
-                    scenario can be flexible and adaptable with your own perspective.</p>
-            </div>
-
-            <div class="explainer" style="--splash-delay: 6">
-                <p>It is possible that a business problem may require more than one
-                    solution and the entire narrative may include multiple scenarios.</p>
-            </div>
+    
         </div>
-
     </div>
-</div>
-
-{% endblock %}
-
-{% block next_page %}
-<a href="{{ url_for('challenges') }}">
-    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
-</a>
-{% endblock %}
+    
+    {% endblock %}
+    
+    {% block next_page %}
+    <a href="{{ url_for('challenges') }}">
+        <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+    </a>
+    {% endblock %}
