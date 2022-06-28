@@ -23,3 +23,9 @@
 
 {% endblock %}
 
+{% block last_page %}
+<a href="{{ url_for('uc_01_example') }}">
+    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+</a>
+{% endblock %}
+
