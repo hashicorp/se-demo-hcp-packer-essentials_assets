@@ -208,9 +208,9 @@ def getHCPBearerToken():
 def uc_01_challenge():
   return render_template('uc-01-challenge.html')
 
-# @app.route('/uc-01-description')
-# def uc_01_description():
-#   return render_template('uc-01-description.html')
+@app.route('/uc-01-description')
+def uc_01_description():
+  return render_template('uc-01-description.html')
 
 @app.route('/uc-01-example')
 def uc_01_example():
