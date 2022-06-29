@@ -1,85 +1,85 @@
-{% extends 'base.html' %}
-
-{% block head %}
-{{ super() }}
-<style>
-    .main-content {
-        width: var(--instruqt-view-width);
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .explainer-icon {
-        width: 128px;
-        height: 128px;
-    }
-
-    .explainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-</style>
-{% endblock %}
-
-{% block main_body %}
-
-<div class="main-container">
-    <div class="main-content">
-
-        <div class="explainer-wrapper">
-
-            <div class=" explainer" style="--splash-delay: 1; width: 300px;">
-
-                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-config.svg') }}"
-                    alt="Packer configuration">
-
-                <h3>Scenario 1: Reducing risk by enforcing standards</h3>
-                <p>A golden image approach helps enforce operational guidelines and
-                    reduces risk by avoiding opinionated configuration options.</p>
+<This file formats the second slide in the Explainer tab under challenge 0>
+    {% extends 'base.html' %}
+    
+    {% block head %}
+    {{ super() }}
+    <style>
+        .main-content {
+            width: var(--instruqt-view-width);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        .explainer-icon {
+            width: 128px;
+            height: 128px;
+        }
+    
+        .explainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    {% endblock %}
+    
+    {% block main_body %}
+    
+    <div class="main-container">
+        <div class="main-content">
+    
+            <div class="explainer-wrapper">
+    
+                <div class=" explainer" style="--splash-delay: 1; width: 300px;">
+    
+                    <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-config.svg') }}"
+                        alt="Packer configuration">
+    
+                    <h3>Step 1: Convert your runbook to a Packer template </h3>
+                    <p>The goal here is to convert your manual runbook into a Packer template. Doing this will reduce the 
+                        time it takes to boot your image.</p>
+                </div>
             </div>
-        </div>
-        <div class="explainer-wrapper">
-
-
-            <div class="explainer" style="--splash-delay: 3; width: 300px;">
-
-                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-workflow.svg') }}"
-                    alt="Image workflow">
-
-                <h3>Scenario 2: Using golden images in automated provisioning workflows</h3>
-                <p>Machine images integrate easily onto a larger workflow framework
-                    to complement automated delivery pipelines.</p>
+            <div class="explainer-wrapper">
+    
+    
+                <div class="explainer" style="--splash-delay: 3; width: 300px;">
+    
+                    <img class="explainer-icon" src="{{ url_for('static', filename='img/cloud.svg') }}"
+                        alt="Image workflow">
+    
+                    <h3>Step 2: Deploy your image in AWS and Azure</h3>
+                    <p>Once you have your golden image, you will store it in HCP Packer (a registry for your images) 
+                        then deploy it in AWS and Azure using Terraform.</p>
+                </div>
             </div>
-        </div>
-        <div class="explainer-wrapper">
-
-            <div class="explainer" style="--splash-delay: 6; width: 300px;">
-
-                <img class="explainer-icon" src="{{ url_for('static', filename='img/icon-process.svg') }}"
-                    alt="Provisioning process">
-
-                <h3>Scenario 3: Maintaining auditability of assets with a central image registry</h3>
-                <p>Consolidating machine image assets in a centralized registry
-                    appeals to security-conscious organizations.</p>
+            <div class="explainer-wrapper">
+    
+                <div class="explainer" style="--splash-delay: 6; width: 300px;">
+    
+                    <img class="explainer-icon" src="{{ url_for('static', filename='img/broom.svg') }}"
+                        alt="Provisioning process">
+    
+                    <h3>Step 3: Clean up / destroy your environment</h3>
+                    <p> After successfully deploying your image in both cloud providers, make sure to clean up/destroy your environment.</p>
+                </div>
             </div>
+    
         </div>
-
     </div>
-</div>
-
-{% endblock %}
-
-{% block last_page %}
-<a href="{{ url_for('about') }}">
-    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
-</a>
-{% endblock %}
-
-{% block next_page %}
-<a href="{{ url_for('setup_hcp') }}">
-    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
-</a>
-{% endblock %}
+    
+    {% endblock %}
+    
+    {% block last_page %}
+    <a href="{{ url_for('about') }}">
+        <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
+    </a>
+    {% endblock %}
+    
+    {% block next_page %}
+    <a href="{{ url_for('setup_hcp') }}">
+        <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+    </a>
+    {% endblock %}

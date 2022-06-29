@@ -2,51 +2,29 @@
 
 {% block head %}
 {{ super() }}
+
 {% endblock %}
 
 {% block main_body %}
 
 <div class="main-container">
     <div class="main-content">
-
-        <div class="explainer-wrapper" data-clickable="true">
-            <img class="explainer-image" src="{{ url_for('static', filename='img/uc-01-example.svg') }}" alt="Vault">
-            <span class="tooltiptext" id="tooltiptext">Known differences</span>
-        </div>
-
         <div class="explainer-wrapper">
-
             <div class="explainer" style="--splash-delay: 1">
-                <h1>Solution</h1>
-                <p>A golden image approach helps enforce operational guidelines and reduces risk by avoiding opinionated
-                    configuration options.</p>
-            </div>
-
-            <div class="explainer" style="--splash-delay: 3">
-                <p>Teams can coordinate common requirements and implement them as standards uniformly across multiple
-                    operating platforms.</p>
-            </div>
-
-            <div class="explainer" style="--splash-delay: 6">
-                <p>Machine images can be easily updated and released to react to emerging business, technology or
-                    security conditions.</p>
+                <h1>Challenges with manual runbooks</h1>
+                    <p>Many companies are using manual runbooks to boot their images. This process is slow, 
+                        tedious, and error prone. Using HashiCorp Packer will eliminate these challenges by 
+                        allowing you to create your golden image! This golden image can then be quickly 
+                        deployed with the Packer template you have created. </p>
             </div>
         </div>
-
     </div>
 </div>
 
 {% endblock %}
 
 {% block last_page %}
-<a href="{{ url_for('uc_01_description') }}">
+<a href="{{ url_for('uc_01_challenge') }}">
     <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
-</a>
-{% endblock %}
-
-
-{% block next_page %}
-<a href="{{ url_for('uc_01_section_01') }}">
-    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
 </a>
 {% endblock %}

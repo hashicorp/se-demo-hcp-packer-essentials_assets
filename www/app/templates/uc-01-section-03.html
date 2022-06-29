@@ -3,6 +3,11 @@
 {% block head %}
 {{ super() }}
 <style>
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 70%;
+    }
 </style>
 {% endblock %}
 
@@ -12,14 +17,43 @@
     <div class="main-content">
         <div class="slide-content">
 
-            <div class="explainer-wrapper">
-                <h1>Automate with HCP Packer and Terraform</h1>
-                <p>With HCP Packer, consumers inherit standards and do not need to make *every*
-                    technology decision for the images that support their deployments.</p>
-                <br>
-                <img src="{{ url_for('static', filename='img/uc-01-terraform_deploy_instance.svg') }}" alt="Vault">
-                <span class="tooltiptext" id="tooltiptext">Controlled deployment</span>
-            </div>
+            <h2>Downloading and Configuring NGINX</h2>
+
+                <ol>
+                    <li>In the new user directory, download NGINX</li>
+                        <ol type="a">
+                            <li>Run these commands. When complete, type in the command quit</li>
+                                <code style="color:blue">sudo -s </code><br>
+                                <code style="color:blue">nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
+                                <code style="color:blue">add-apt-repository ppa:nginx/$nginx</code><br>
+                                <code style="color:blue">apt update</code><br>
+                                <code style="color:blue">apt install nginx</code><br>
+                            <li>Verify the installation with <code style="color:blue">nginx -v</code></li>
+                                <ol type="i">
+                                    <li>It’ll display the software version nginx version: <code style="color:blue">nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
+                                </ol>
+                        </ol>
+                    <li>Enable and start the NGINX landing page</li>
+                        <ol type="a">
+                            <li>Start by checking the status where it will display <code style="color:blue">active(running)</code></li>
+                                <code style="color:blue">sudo systemctl status nginx</code>
+                                <ol type="i">
+                                    <li>If NGINX is not running, run the following <code style="color:blue">sudo systemctl <code style="color:orange">start</code> nginx</code></li>
+                                </ol>
+                            <li>Load when the system starts</li>
+                                <code style="color:blue">sudo systemctl <code style="color:orange">enable</code> nginx</code>
+                            <li>Allow NGINX traffic and grant access to the firewall</li>
+                                <code style="color:blue">sudo ufw app <code style="color:orange">list</code></code><br>
+                                <code style="color:blue">sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
+                                <code style="color:blue">sudo ufw reload</code>
+                        </ol>
+                    <li>Deploying the NGINX Page</li>
+                    <ol type="a">
+                        <li>Open a new web browser with the IP address from the Connect instance page</li>
+                        <li>It should look like this, where the localhost is the IP address</li>
+                        <img src="{{ url_for('static', filename='img/nginx-loading-page.svg') }}" alt="Vault">
+                    </ol>
+                </ol>
 
         </div>
 
@@ -31,12 +65,5 @@
 {% block last_page %}
 <a href="{{ url_for('uc_01_section_02') }}">
     <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
-</a>
-{% endblock %}
-
-
-{% block next_page %}
-<a href="{{ url_for('uc_01_summary') }}">
-    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
 </a>
 {% endblock %}
