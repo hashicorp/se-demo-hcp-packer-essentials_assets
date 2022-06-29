@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main_body %}
+
+<div class="main-container">
+    <div class="main-content">
+        <h1> <strong>Overview:</strong> This runbook will outline the steps required to configure an ubuntu instance 
+            on AWS with an NGINX application. </h1>
+
+        <h2>Creating Ubuntu Server in AWS</h2>
+
+        <p>1. Create a new instance by using the Amazon EC2 
+            a. Under the AMI, select Ubuntu 20.04 LTS in the Quick Start section
+            b. Make sure to create a Key pair
+            c .Under Network Settings, find the Firewall section & click “create security group”
+                i. Check all three boxes to create rules for SSH, HTTPs & HTTP traffic
+                <img src="{{ url_for('static', filename='img/step-1.svg') }}" alt="Vault">
+            d. Use default settings for everything else and then click “Launch instance”
+            e. Connect the Instance to the Ubuntu server by clicking on “Connect” that is located in the Instance summary
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}
+
