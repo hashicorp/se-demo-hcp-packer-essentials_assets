@@ -3,6 +3,11 @@
 {% block head %}
 {{ super() }}
 <style>
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 40%;
+    }
 </style>
 {% endblock %}
 
@@ -46,7 +51,7 @@
                     <ol type="a">
                         <li>Open a new web browser with the IP address from the Connect instance page</li>
                         <li>It should look like this, where the localhost is the IP address</li>
-                        <img src="../static/img/nginx-loading-page.png" alt="Vault">
+                        <img src="{{ url_for('static', filename='img/nginx-loading-page.svg') }}" alt="Vault">
                     </ol>
                 </ol>
 

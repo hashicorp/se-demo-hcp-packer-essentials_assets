@@ -3,8 +3,14 @@
 {% block head %}
 {{ super() }}
 <style>
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 40%;
+    }
 </style>
 {% endblock %}
+
 
 {% block main_body %}
 
@@ -28,7 +34,7 @@
                             <ol type="i">
                                 <li>Check all three boxes to create rules for SSH, HTTPs & HTTP traffic</li>
                             </ol>
-                            <img src="../static/img/step-1.svg" alt="Vault">
+                            <img src="{{ url_for('static', filename='img/step-1.svg') }}" alt="Vault">
 
                         <li>Use default settings for everything else and then click “Launch instance”</li> 
                         <li>Connect the Instance to the Ubuntu server by clicking on “Connect” that is located in the Instance summary</li> 
