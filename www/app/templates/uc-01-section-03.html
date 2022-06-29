@@ -23,29 +23,29 @@
                     <li>In the new user directory, download NGINX</li>
                         <ol type="a">
                             <li>Run these commands. When complete, type in the command quit</li>
-                                <code>sudo -s </code><br>
-                                <code>nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
-                                <code>add-apt-repository ppa:nginx/$nginx</code><br>
-                                <code>apt update</code><br>
-                                <code>apt install nginx</code><br>
-                            <li>Verify the installation with <code>nginx -v</code></li>
+                                <code style="color:blue">sudo -s </code><br>
+                                <code style="color:blue">nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
+                                <code style="color:blue">add-apt-repository ppa:nginx/$nginx</code><br>
+                                <code style="color:blue">apt update</code><br>
+                                <code style="color:blue">apt install nginx</code><br>
+                            <li>Verify the installation with <code style="color:blue">nginx -v</code></li>
                                 <ol type="i">
-                                    <li>It’ll display the software version nginx version: <code>nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
+                                    <li>It’ll display the software version nginx version: <code style="color:blue">nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
                                 </ol>
                         </ol>
                     <li>Enable and start the NGINX landing page</li>
                         <ol type="a">
-                            <li>Start by checking the status where it will display <code>active(running)</code></li>
-                                <code>sudo systemctl status nginx</code>
+                            <li>Start by checking the status where it will display <code style="color:blue">active(running)</code></li>
+                                <code style="color:blue">sudo systemctl status nginx</code>
                                 <ol type="i">
-                                    <li>If NGINX is not running, run the following <code>sudo systemctl <code style="color:orange">start</code> nginx</code></li>
+                                    <li>If NGINX is not running, run the following <code style="color:blue">sudo systemctl <code style="color:orange">start</code> nginx</code></li>
                                 </ol>
                             <li>Load when the system starts</li>
-                                <code>sudo systemctl <code style="color:orange">enable</code> nginx</code>
+                                <code style="color:blue">sudo systemctl <code style="color:orange">enable</code> nginx</code>
                             <li>Allow NGINX traffic and grant access to the firewall</li>
-                                <code>sudo ufw app <code style="color:orange">list</code></code><br>
-                                <code>sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
-                                <code>sudo ufw reload</code>
+                                <code style="color:blue">sudo ufw app <code style="color:orange">list</code></code><br>
+                                <code style="color:blue">sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
+                                <code style="color:blue">sudo ufw reload</code>
                         </ol>
                     <li>Deploying the NGINX Page</li>
                     <ol type="a">
