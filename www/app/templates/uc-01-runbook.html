@@ -64,47 +64,15 @@
                         <code>mkdir DIRECTORY-NAME</code>
                     </ol>
             </ol>
-
-            <h2>Downloading and Configuring NGINX</h2>
-
-            <ol>
-                <li>In the new user directory, download NGINX</li>
-                    <ol type="a">
-                        <li>Run these commands. When complete, type in the command quit</li>
-                            <code>sudo -s </code><br>
-                            <code>nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
-                            <code>add-apt-repository ppa:nginx/$nginx</code><br>
-                            <code>apt update</code><br>
-                            <code>apt install nginx</code><br>
-                        <li>Verify the installation with <code>nginx -v</code></li>
-                            <ol type="i">
-                                <li>It’ll display the software version nginx version: <code>nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
-                            </ol>
-                    </ol>
-                <li>Enable and start the NGINX landing page</li>
-                    <ol type="a">
-                        <li>Start by checking the status where it will display <code>active(running)</code></li>
-                            <code>sudo systemctl status nginx</code>
-                            <ol type="i">
-                                <li>If NGINX is not running, run the following <code>sudo systemctl <code style="color:orange">start</code> nginx</code></li>
-                            </ol>
-                        <li>Load when the system starts</li>
-                            <code>sudo systemctl <code style="color:yellow">enable</code> nginx</code>
-                        <li>Allow NGINX traffic and grant access to the firewall</li>
-                            <code>sudo ufw app <code style="color:yellow">list</code></code><br>
-                            <code>sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
-                            <code>sudo ufw reload</code>
-                    </ol>
-                <li>Deploying the NGINX Page</li>
-                <ol type="a">
-                    <li>Open a new web browser with the IP address from the Connect instance page</li>
-                    <li>It should look like this, where the localhost is the IP address</li>
-                    <img src="../static/img/nginx-loading-page.png" alt="Vault">
-                </ol>
-            </ol>
         </div>
     </div>
 </div>
 
 {% endblock %}
 
+
+{% block next_page %}
+<a href="{{ url_for('uc_01_runbook_2') }}">
+    <img src="{{ url_for('static', filename='img/right-arrow.svg') }}" alt="Next">
+</a>
+{% endblock %}
