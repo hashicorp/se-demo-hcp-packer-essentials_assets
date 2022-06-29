@@ -213,7 +213,7 @@ def uc_01_description():
   return render_template('uc-01-description.html')
 
 @app.route('/uc-01-runbook')
-def uc_01_example():
+def uc_01_runbook():
   return render_template('uc-01-runbook.html')
 
 @app.route('/uc-01-example')
