@@ -50,9 +50,9 @@
                     <img class="explainer-icon" src="{{ url_for('static', filename='img/cloud.svg') }}"
                         alt="Image workflow">
     
-                    <h3>Step 2: Deploy your image in AWS</h3>
+                    <h3>Step 2: Deploy your image in AWS and Azure</h3>
                     <p>Once you have your golden image, you will store it in HCP Packer (a registry for your images) 
-                        then deploy it in AWS using Terraform.</p>
+                        then deploy it in AWS and Azure using Terraform.</p>
                 </div>
             </div>
             <div class="explainer-wrapper">
@@ -62,10 +62,8 @@
                     <img class="explainer-icon" src="{{ url_for('static', filename='img/broom.svg') }}"
                         alt="Provisioning process">
     
-                    <h3>Step 3: Deploy your image in Azure and clean up/destroy </h3>
-                    <p>After deploying your image in AWS, convert your golden image file to follow the syntax of Azure and deploy it there.
-                        After successfully deploying your image in both cloud providers, make sure to clean up/destroy your infrastructure.
-                    </p>
+                    <h3>Step 3: Clean up / destroy your environment</h3>
+                    <p> After successfully deploying your image in both cloud providers, make sure to clean up/destroy your environment.</p>
                 </div>
             </div>
     
