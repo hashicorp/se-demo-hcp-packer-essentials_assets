@@ -216,6 +216,10 @@ def uc_01_description():
 def uc_01_runbook():
   return render_template('uc-01-runbook.html')
 
+@app.route('/uc-01-runbook-2')
+def uc_01_runbook_2():
+  return render_template('uc-01-runbook-2.html')
+
 @app.route('/uc-01-example')
 def uc_01_example():
   return render_template('uc-01-example.html')
