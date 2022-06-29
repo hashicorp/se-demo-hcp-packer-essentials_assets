@@ -13,96 +13,101 @@
         margin: 0 auto;
         max-width: 40%;
     }
+
+    .divScroll {
+        overflow: scroll;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
 </style>
 
-<div style="overflow-x:auto">
 
-    <div class="main-container">
-        <div class="main-content">
-            <div class="explainer-wrapper">
-                <h1> <strong>Overview:</strong> This runbook will outline the steps required to configure an ubuntu instance 
-                    on AWS with an NGINX application. </h1>
 
-                <h2>Creating Ubuntu Server in AWS</h2>
+<div class="main-container">
+    <div class="main-content">
+        <div class="explainer-wrapper">
+            <h1> <strong>Overview:</strong> This runbook will outline the steps required to configure an ubuntu instance 
+                on AWS with an NGINX application. </h1>
 
-                <ol> 
-                    <li>Create a new instance by using the Amazon EC2 </li>
-                        <ol type="a">
-                            <li>Under the AMI, select Ubuntu 20.04 LTS in the Quick Start section</li> 
-                            <li>Make sure to create a Key pair</li>
-                            <li>Under Network Settings, find the Firewall section & click “create security group”</li>
-                    
-                    
-                                <ol type="i">
-                                    <li>Check all three boxes to create rules for SSH, HTTPs & HTTP traffic</li>
-                                </ol>
-                                <img src="../static/img/step-1.svg" alt="Vault">
+            <h2>Creating Ubuntu Server in AWS</h2>
 
-                            <li>Use default settings for everything else and then click “Launch instance”</li> 
-                            <li>Connect the Instance to the Ubuntu server by clicking on “Connect” that is located in the Instance summary</li> 
-                        </ol>
-                </ol>
-
-                <h2>Add a New User and Directory in Ubuntu</h2>
-
-                <ol>
-                    <li>Add a new user</li>
-                        <ol type="a">
-                            <li>From the Ubuntu user, move to the home directory and add a USERNAME</li>
-                                <code>sudo adduser USERNAME </code>
-                        </ol>
-                    <li>Add the new user to the ‘sudoers’ directory</li>
-                        <ol type="a">
-                            <li>This is needed in order to install nginx in our user directory</li>
-                            <code>sudo adduser USERNAME sudo</code>
-                        </ol>
-                    <li>Switch into the user</li>
-                            <ol><code>sudo adduser USERNAME sudo</code></ol>
-                    <li>ACreate a directory in your user directory </li>
-                        <ol type="a">
-                            <li>This is where we can create our app directory </li>
-                            <code>mkdir DIRECTORY-NAME</code>
-                        </ol>
-                </ol>
-
-                <h2>Downloading and Configuring NGINX</h2>
-
-                <ol>
-                    <li>In the new user directory, download NGINX</li>
-                        <ol type="a">
-                            <li>Run these commands. When complete, type in the command quit</li>
-                                <code>sudo -s </code><br>
-                                <code>nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
-                                <code>add-apt-repository ppa:nginx/$nginx</code><br>
-                                <code>apt update</code><br>
-                                <code>apt install nginx</code><br>
-                            <li>Verify the installation with <code>nginx -v</code></li>
-                                <ol type="i">
-                                    <li>It’ll display the software version nginx version: <code>nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
-                                </ol>
-                        </ol>
-                    <li>Enable and start the NGINX landing page</li>
-                        <ol type="a">
-                            <li>Start by checking the status where it will display <code>active(running)</code></li>
-                                <code>sudo systemctl status nginx</code>
-                                <ol type="i">
-                                    <li>If NGINX is not running, run the following <code>sudo systemctl <code style="color:orange">start</code> nginx</code></li>
-                                </ol>
-                            <li>Load when the system starts</li>
-                                <code>sudo systemctl <code style="color:yellow">enable</code> nginx</code>
-                            <li>Allow NGINX traffic and grant access to the firewall</li>
-                                <code>sudo ufw app <code style="color:yellow">list</code></code><br>
-                                <code>sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
-                                <code>sudo ufw reload</code>
-                        </ol>
-                    <li>Deploying the NGINX Page</li>
+            <ol> 
+                <li>Create a new instance by using the Amazon EC2 </li>
                     <ol type="a">
-                        <li>Open a new web browser with the IP address from the Connect instance page</li>
-                        <li>It should look like this, where the localhost is the IP address</li>
-                        <img src="../static/img/nginx-loading-page.png" alt="Vault">
+                        <li>Under the AMI, select Ubuntu 20.04 LTS in the Quick Start section</li> 
+                        <li>Make sure to create a Key pair</li>
+                        <li>Under Network Settings, find the Firewall section & click “create security group”</li>
+                
+                
+                            <ol type="i">
+                                <li>Check all three boxes to create rules for SSH, HTTPs & HTTP traffic</li>
+                            </ol>
+                            <img src="../static/img/step-1.svg" alt="Vault">
+
+                        <li>Use default settings for everything else and then click “Launch instance”</li> 
+                        <li>Connect the Instance to the Ubuntu server by clicking on “Connect” that is located in the Instance summary</li> 
                     </ol>
+            </ol>
+
+            <h2>Add a New User and Directory in Ubuntu</h2>
+
+            <ol>
+                <li>Add a new user</li>
+                    <ol type="a">
+                        <li>From the Ubuntu user, move to the home directory and add a USERNAME</li>
+                            <code>sudo adduser USERNAME </code>
+                    </ol>
+                <li>Add the new user to the ‘sudoers’ directory</li>
+                    <ol type="a">
+                        <li>This is needed in order to install nginx in our user directory</li>
+                        <code>sudo adduser USERNAME sudo</code>
+                    </ol>
+                <li>Switch into the user</li>
+                        <ol><code>sudo adduser USERNAME sudo</code></ol>
+                <li>ACreate a directory in your user directory </li>
+                    <ol type="a">
+                        <li>This is where we can create our app directory </li>
+                        <code>mkdir DIRECTORY-NAME</code>
+                    </ol>
+            </ol>
+
+            <h2>Downloading and Configuring NGINX</h2>
+
+            <ol>
+                <li>In the new user directory, download NGINX</li>
+                    <ol type="a">
+                        <li>Run these commands. When complete, type in the command quit</li>
+                            <code>sudo -s </code><br>
+                            <code>nginx=stable <code style="color:grey"> # use nginx=development for latest development version</code></code><br>
+                            <code>add-apt-repository ppa:nginx/$nginx</code><br>
+                            <code>apt update</code><br>
+                            <code>apt install nginx</code><br>
+                        <li>Verify the installation with <code>nginx -v</code></li>
+                            <ol type="i">
+                                <li>It’ll display the software version nginx version: <code>nginx/<code style="color:red">1.18.0</code></code> (Ubuntu)</li>
+                            </ol>
+                    </ol>
+                <li>Enable and start the NGINX landing page</li>
+                    <ol type="a">
+                        <li>Start by checking the status where it will display <code>active(running)</code></li>
+                            <code>sudo systemctl status nginx</code>
+                            <ol type="i">
+                                <li>If NGINX is not running, run the following <code>sudo systemctl <code style="color:orange">start</code> nginx</code></li>
+                            </ol>
+                        <li>Load when the system starts</li>
+                            <code>sudo systemctl <code style="color:yellow">enable</code> nginx</code>
+                        <li>Allow NGINX traffic and grant access to the firewall</li>
+                            <code>sudo ufw app <code style="color:yellow">list</code></code><br>
+                            <code>sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
+                            <code>sudo ufw reload</code>
+                    </ol>
+                <li>Deploying the NGINX Page</li>
+                <ol type="a">
+                    <li>Open a new web browser with the IP address from the Connect instance page</li>
+                    <li>It should look like this, where the localhost is the IP address</li>
+                    <img src="../static/img/nginx-loading-page.png" alt="Vault">
                 </ol>
-            </div>
+            </ol>
         </div>
     </div>
 </div>
