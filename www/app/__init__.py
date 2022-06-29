@@ -212,6 +212,10 @@ def uc_01_challenge():
 def uc_01_description():
   return render_template('uc-01-description.html')
 
+@app.route('/uc-01-runbook')
+def uc_01_example():
+  return render_template('uc-01-runbook.html')
+
 @app.route('/uc-01-example')
 def uc_01_example():
   return render_template('uc-01-example.html')
