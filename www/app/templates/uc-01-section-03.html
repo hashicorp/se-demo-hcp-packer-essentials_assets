@@ -41,9 +41,9 @@
                                     <li>If NGINX is not running, run the following <code>sudo systemctl <code style="color:orange">start</code> nginx</code></li>
                                 </ol>
                             <li>Load when the system starts</li>
-                                <code>sudo systemctl <code style="color:yellow">enable</code> nginx</code>
+                                <code>sudo systemctl <code style="color:orange">enable</code> nginx</code>
                             <li>Allow NGINX traffic and grant access to the firewall</li>
-                                <code>sudo ufw app <code style="color:yellow">list</code></code><br>
+                                <code>sudo ufw app <code style="color:orange">list</code></code><br>
                                 <code>sudo ufw allow '<code style="color:red">nginx</code> full'</code><br>
                                 <code>sudo ufw reload</code>
                         </ol>
