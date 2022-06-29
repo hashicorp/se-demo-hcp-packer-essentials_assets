@@ -153,8 +153,8 @@
      ========================================================================== */
   
   .divScroll{
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
     text-align: justify;
   }
 
