@@ -3,6 +3,11 @@
 {% block head %}
 {{ super() }}
 <style>
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 70%;
+    }
 </style>
 {% endblock %}
 
@@ -12,17 +17,28 @@
     <div class="main-content">
         <div class="slide-content">
 
-            <div class="explainer-wrapper">
-                <h1>Deploy with the AWS EC2 CLI</h1>
-                <p>Cloud practitioners can build, track and maintain their machine images and deployments manually.
-                </p>
-                <br>
-                <img src="{{ url_for('static', filename='img/uc-01-aws_cli_deploy.svg') }}" alt="Vault">
-                <span class="tooltiptext" id="tooltiptext">Manual deployment</span>
-            </div>
+            <h2>Add a New User and Directory in Ubuntu</h2>
 
+            <ol>
+                <li>Add a new user</li>
+                    <ol type="a">
+                        <li>From the Ubuntu user, move to the home directory and add a USERNAME</li>
+                            <code style="color:blue">sudo adduser USERNAME </code>
+                    </ol>
+                <li>Add the new user to the ‘sudoers’ directory</li>
+                    <ol type="a">
+                        <li>This is needed in order to install nginx in our user directory</li>
+                        <code style="color:blue">sudo adduser USERNAME sudo</code>
+                    </ol>
+                <li>Switch into the user</li>
+                        <ol><code style="color:blue">sudo adduser USERNAME sudo</code></ol>
+                <li>ACreate a directory in your user directory </li>
+                    <ol type="a">
+                        <li>This is where we can create our app directory </li>
+                        <code style="color:blue">mkdir DIRECTORY-NAME</code>
+                    </ol>
+            </ol>
         </div>
-
     </div>
 </div>
 
@@ -33,7 +49,6 @@
     <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
 </a>
 {% endblock %}
-
 
 {% block next_page %}
 <a href="{{ url_for('uc_01_section_03') }}">

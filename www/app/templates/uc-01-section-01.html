@@ -3,8 +3,14 @@
 {% block head %}
 {{ super() }}
 <style>
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 70%;
+    }
 </style>
 {% endblock %}
+
 
 {% block main_body %}
 
@@ -12,27 +18,33 @@
     <div class="main-content">
         <div class="slide-content">
 
-            <div class="explainer-wrapper">
-                <h1>Build a machine image with Packer</h1>
-                <p>Establish standardization: Use standardized machine images to resolve the practices disparities.</p>
-                <br>
-                <img src="{{ url_for('static', filename='img/uc-01-packer-build-ami.svg') }}" alt="Vault">
-                <span class="tooltiptext" id="tooltiptext">Create a machine image</span>
-            </div>
+            <h1> <strong>Overview:</strong> This runbook will outline the steps required to configure an ubuntu instance 
+                on AWS with an NGINX application. </h1>
 
+            <h2>Creating Ubuntu Server in AWS</h2>
+
+            <ol> 
+                <li>Create a new instance by using the Amazon EC2 </li>
+                    <ol type="a">
+                        <li>Under the AMI, select Ubuntu 20.04 LTS in the Quick Start section</li> 
+                        <li>Make sure to create a Key pair</li>
+                        <li>Under Network Settings, find the Firewall section & click “create security group”</li>
+                
+                
+                            <ol type="i">
+                                <li>Check all three boxes to create rules for SSH, HTTPs & HTTP traffic</li>
+                            </ol>
+                            <img src="{{ url_for('static', filename='img/step-1.svg') }}" alt="Vault">
+
+                        <li>Use default settings for everything else and then click “Launch instance”</li> 
+                        <li>Connect the Instance to the Ubuntu server by clicking on “Connect” that is located in the Instance summary</li> 
+                    </ol>
+            </ol>
         </div>
-
     </div>
 </div>
 
 {% endblock %}
-
-{% block last_page %}
-<a href="{{ url_for('uc_01_example') }}">
-    <img src="{{ url_for('static', filename='img/left-arrow.svg') }}" alt="Last">
-</a>
-{% endblock %}
-
 
 {% block next_page %}
 <a href="{{ url_for('uc_01_section_02') }}">
