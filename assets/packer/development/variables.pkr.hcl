@@ -9,7 +9,7 @@ variable "version" {
   default = "1.0.0"
 }
 
-# Canonical publishes Ubuntu mages to support numerous features found on EC2.
+# Canonical publishes Ubuntu images to support numerous features found on EC2.
 # https://ubuntu.com/server/docs/cloud-images/amazon-ec2
 # The Canonical ID is "099720109477" and we use that in our build section.
 # To obtain the whole list of Ubuntu images available use:
@@ -18,7 +18,7 @@ variable "version" {
 
 variable "image_name" {
   type    = string
-  default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
+  default = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*" # changed the image from 18.04 to 20.04
 }
 
 # These are meta-data to support document your AMI. 
@@ -31,6 +31,6 @@ variable "aws_tags" {
     "Developer"   = "REPLACE-ME"
     "Owner"       = "development"
     "OS"          = "Ubuntu"
-    "Version"     = "Bionic 18.04"
+    "Version"     = "Focal 20.04"
   }
 }
