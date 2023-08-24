@@ -41,7 +41,8 @@ export TFE_WORKSPACE_ID=$(curl -k -s \
   $TFC_API_SHOW_WORKSPACE \
 | jq -r '.data.id')
 
-declare -a environment_vars=("HCP_CLIENT_ID" "HCP_CLIENT_SECRET" "AWS_ACCESS_KEY_ID" "AWS_SECRET_ACCESS_KEY")
+# added HCP_PROJECT_ID env variable to allow watchdog to use PLSP
+declare -a environment_vars=("HCP_PROJECT_ID" "HCP_CLIENT_ID" "HCP_CLIENT_SECRET" "AWS_ACCESS_KEY_ID" "AWS_SECRET_ACCESS_KEY")
 for var in ${environment_vars[@]}; 
 do 
     cat << EOF > create_var.json
