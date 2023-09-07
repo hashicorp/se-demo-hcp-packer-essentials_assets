@@ -88,17 +88,17 @@
         </g>
         <line x1="-110.5" y1="144.5" x2="366.727431" y2="144.480903" id="Line" stroke="#343536" stroke-linecap="square" stroke-dasharray="5,5"></line>
         <g id="Group-5" transform="translate(19.000000, 20.000000)" fill="#343536" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal">
-            <text id="Ubuntu-Bionic-18.04">
+            <text id="Ubuntu-Focal-20.04">
                 <tspan x="31.344" y="8">Ubuntu</tspan>
-                <tspan x="36.384" y="18">Bionic</tspan>
-                <tspan x="40.496" y="28">18.04</tspan>
+                <tspan x="36.384" y="18">Focal</tspan>
+                <tspan x="40.496" y="28">20.04</tspan>
             </text>
         </g>
         <g id="Group-5" transform="translate(19.000000, 250.000000)" fill="#343536" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal">
-            <text id="Ubuntu-Bionic-18.04">
+            <text id="Ubuntu-Focal-20.04">
                 <tspan x="31.344" y="8">Ubuntu</tspan>
-                <tspan x="36.384" y="18">Bionic</tspan>
-                <tspan x="40.496" y="28">18.04</tspan>
+                <tspan x="36.384" y="18">Focal</tspan>
+                <tspan x="40.496" y="28">20.04</tspan>
             </text>
         </g>
         <text id="DEVELOPMENT" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
@@ -113,26 +113,26 @@
             </text>
         </g>
         <text id="Create-new-Interatio" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
-            <tspan x="300" y="38">Create new Interation for Ubuntu Focal</tspan>
+            <tspan x="300" y="38">Create new Interation for Ubuntu Jammy</tspan>
         </text>
-        <text id="Revoke-Ubuntu-Bionic" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
-            <tspan x="300" y="78">Revoke Ubuntu Bionic image</tspan>
+        <text id="Revoke-Ubuntu-Focal" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
+            <tspan x="300" y="78">Revoke Ubuntu Focal image</tspan>
         </text>
         <text id="Attempt-to-deploy-Ub" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
-            <tspan x="300" y="118">Attempt to deploy Ubuntu Bionic image</tspan>
+            <tspan x="300" y="118">Attempt to deploy Ubuntu Focal image</tspan>
         </text>
         <text id="UPDATE" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
             <tspan x="224.08" y="225">UPDATE</tspan>
         </text>
         <text id="PRODUCTION" font-family="Gilmer-Bold, Gilmer" font-size="8" font-weight="bold" fill="#343536">
-            <tspan x="442.302194" y="273.65625">PRODUCTION</tspan>
+            <tspan x="422.302194" y="273.65625">PRODUCTION</tspan>
         </text>
         <line x1="86" y1="264" x2="104.003185" y2="255.288781" id="Path" stroke="#292423" stroke-width="2"></line>
         <g id="Group-5" transform="translate(240.000000, 246.000000)" fill="#343536" font-family="Gilmer-Regular, Gilmer" font-size="8" font-weight="normal">
-            <text id="Ubuntu-Focal-20.04">
+            <text id="Ubuntu-Jammy-22.04">
                 <tspan x="31.344" y="8">Ubuntu</tspan>
-                <tspan x="38.88" y="18">Focal</tspan>
-                <tspan x="38.728" y="28">20.04</tspan>
+                <tspan x="38.88" y="18">Jammy</tspan>
+                <tspan x="38.728" y="28">22.04</tspan>
             </text>
         </g>
         <line x1="307" y1="260" x2="325.003185" y2="251.288781" id="Path" stroke="#292423" stroke-width="2"></line>

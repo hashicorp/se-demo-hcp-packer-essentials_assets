@@ -18,7 +18,7 @@ variable "version" {
 
 variable "image_name" {
   type    = string
-  default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
+  default = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
 }
 
 # These are meta-data to support document your AMI. 
@@ -31,6 +31,6 @@ variable "aws_tags" {
     "Developer"   = "REPLACE-ME"
     "Owner"       = "Production"
     "OS"          = "Ubuntu"
-    "Version"     = "Bionic 18.04"
+    "Version"     = "Focal 20.04"
   }
 }
