@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 import os, json, subprocess
 from watchfiles import run_process, DefaultFilter, Change
 

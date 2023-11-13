@@ -1,4 +1,7 @@
 #!/bin/bash -l
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 # Check out source to a new branch folder
 export BRANCH=$TF_DIR"-branch-"$(date +%s)
