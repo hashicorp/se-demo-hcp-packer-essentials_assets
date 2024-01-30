@@ -1,4 +1,7 @@
 #!/bin/bash -l
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 # HCP Packer API shortcuts
 export HCP_PACKER_BASE_URL=https://api.cloud.hashicorp.com/packer/2021-04-30/organizations/${HCP_ORGANIZATION_ID}/projects/${HCP_PROJECT_ID}
