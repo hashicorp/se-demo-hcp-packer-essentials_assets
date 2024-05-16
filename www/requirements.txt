@@ -10,5 +10,5 @@ MarkupSafe==2.1.1
 requests==2.27.1
 urllib3==1.26.9
 uWSGI==2.0.20
-Werkzeug==2.1.2
+Werkzeug==2.2.2
 WTForms==3.0.1
